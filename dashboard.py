@@ -19,8 +19,12 @@ df = pd.read_excel(
     nrows=545,
     )
     
-df2 = df[['Monster','Initiatives ','Attributes','Scenario Level']]
+df2 = df[['Monster','Initiatives ','Attributes','Scenario Level', 'Monster Level']]
 #df = get_data_from_excel()
+
+def color_elite(val):
+    color = 'yellow' if "Elite" in val
+    return f'background-color: {color}'
 
 htp="https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg"
 #st.image(htp, caption= 'logo', width=350)
@@ -54,6 +58,7 @@ df_selection = df.query(
 st.title(":hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 st.markdown("## Minimal List")
 st.dataframe(df_selection_filtered)
+st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
 st.markdown("## :bar_chart: Detailed List of all values below")
 st.dataframe(df_selection)
 st.image(htp, caption='When Sister Mary Clarence exhausts....', width=350)
