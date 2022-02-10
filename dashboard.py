@@ -40,7 +40,7 @@ columns = st.sidebar.multiselect(
 )
 
 df_selection = df.query(
-    "`Scenario Level` == @scenario_level & Monster == @monster_type & .columns ==@columns"
+    "`Scenario Level` == @scenario_level & Monster == @monster_type & df_selection.columns ==@columns"
 )
 
 
