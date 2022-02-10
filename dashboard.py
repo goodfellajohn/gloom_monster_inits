@@ -41,7 +41,7 @@ df_selection = df.query(
 st.dataframe(df_selection)
 
 #--- MAINPAGE -----
-st.title(":eggplant: Sister Mary Clarence & Vlad II Killue's Conquest")
+st.title(":us: Sister Mary Clarence & Vlad II Killeu's Conquest")
 st.markdown("##")
 
 
