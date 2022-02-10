@@ -17,7 +17,7 @@ df = pd.read_excel(
     nrows=545,
     )
     
-df = df[['Monster','Initiatives','Attributes','Scenario Level']]
+df = df[['Monster','Initiatives ','Attributes','Scenario Level']]
 #df = get_data_from_excel()
 
 #--- SIDEBAR ----
