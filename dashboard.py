@@ -25,6 +25,9 @@ df2 = df[['Monster','Initiatives ','Attributes','Scenario Level', 'Monster Level
 def color_elite(val):
     color = 'yellow' if "Elite" in val else ''
     return f'background-color: {color}'
+  
+def highlight_elite(s):
+    return ['background-color: yellow']*len(s) if "Elite" in s.`Monster Level` else ['background-color: ']*len(s)
 
 htp="https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg"
 #st.image(htp, caption= 'logo', width=350)
@@ -57,7 +60,8 @@ df_selection = df.query(
 #--- MAINPAGE -----
 st.title(":hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 st.markdown("## Minimal List")
-st.dataframe(df_selection_filtered)
+#st.dataframe(df_selection_filtered)
+st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
 st.markdown("## :bar_chart: Detailed List of all values below")
 st.dataframe(df_selection)
