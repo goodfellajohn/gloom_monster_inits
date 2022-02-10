@@ -33,7 +33,7 @@ monster_type = st.sidebar.multiselect(
     default=df["Monster"][10]
 )
 
-columns = st.multiselect(
+columns = st.sidebar.multiselect(
   "Filter columns",
   options=list(df.columns),
   default=list(df.columns)
