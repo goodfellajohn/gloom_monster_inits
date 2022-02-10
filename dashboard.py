@@ -62,4 +62,5 @@ hide_dataframe_row_index = """
             </style>
             """
 
-st.markdown(hide_st_style,hide_dataframe_row_index, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
