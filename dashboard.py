@@ -31,7 +31,7 @@ scenario_level = st.sidebar.multiselect(
 monster_type = st.sidebar.multiselect(
     "Select the Monster:",
     options=df["Monster"].unique(),
-    default=df["Monster"][10]
+    default=df["Monster"][6]
 )
 
 df_selection_filtered = df2.query(
@@ -45,8 +45,8 @@ df_selection = df.query(
 
 
 #--- MAINPAGE -----
-st.title(":bear: Sister Mary Clarence & Vlad II Killeu's Conquest :hocho:")
-st.markdown("## Short List")
+st.title(":hocho: Sister Mary Clarence & Vlad II Killeu's Conquest :droplet::bear:")
+st.markdown("## Minimal List")
 st.dataframe(df_selection_filtered)
 st.markdown("## :bar_chart: Detailed List of all values below")
 st.dataframe(df_selection)
