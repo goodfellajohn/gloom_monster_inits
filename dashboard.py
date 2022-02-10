@@ -38,11 +38,12 @@ df_selection = df.query(
     "`Scenario Level` == @scenario_level & Monster == @monster_type"
 )
 
-st.dataframe(df_selection)
+
 
 #--- MAINPAGE -----
 st.title(":bear: Sister Mary Clarence & Vlad II Killeu's Conquest")
 st.markdown("##")
+st.dataframe(df_selection)
 
 
 
