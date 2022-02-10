@@ -17,7 +17,7 @@ df = pd.read_excel(
     nrows=545,
     )
     
-df2 = df[['Monster','Initiatives','Attributes','Scenario Level']]
+df = df[['Monster','Initiatives','Attributes','Scenario Level']]
 #df = get_data_from_excel()
 
 #--- SIDEBAR ----
@@ -34,9 +34,9 @@ monster_type = st.sidebar.multiselect(
     default=df["Monster"][10]
 )
 
-df_selection_filtered = df2.query(
-    "`Scenario Level` == @scenario_level & Monster == @monster_type"
-)
+# df_selection_filtered = df2.query(
+#     "`Scenario Level` == @scenario_level & Monster == @monster_type"
+# )
 
 df_selection = df.query(
     "`Scenario Level` == @scenario_level & Monster == @monster_type"
@@ -47,7 +47,7 @@ df_selection = df.query(
 #--- MAINPAGE -----
 st.title(":bear: Sister Mary Clarence & Vlad II Killeu's Conquest")
 st.markdown("##")
-st.dataframe(df_selection_filtered)
+#st.dataframe(df_selection_filtered)
 st.dataframe(df_selection)
 
 
