@@ -23,7 +23,7 @@ df2 = df[['Monster','Initiatives ','Attributes','Scenario Level', 'Monster Level
 #df = get_data_from_excel()
 
 def color_elite(val):
-    color = 'yellow' if "Elite" in val
+    color = 'yellow' if "Elite" in val else ''
     return f'background-color: {color}'
 
 htp="https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg"
