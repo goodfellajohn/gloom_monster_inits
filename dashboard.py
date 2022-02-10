@@ -9,7 +9,7 @@ st.set_page_config(page_title="Leanne's Bent Carrot Dashboard",
 #@st.cache 
 #def get_data_from_excel():
 df = pd.read_excel(
-    io='https://github.com/goodfellajohn/gloom_monster_inits/blob/c8c5eb9ba4794034b4b01a42089c1573230ec3ff/Gloomhaven%20Monster%20Stats.xlsx',#'D:\gloomhaven_streamlit\Gloomhaven Monster Stats.xlsx',
+    io='https://github.com/goodfellajohn/gloom_monster_inits/blob/c8c5eb9ba4794034b4b01a42089c1573230ec3ff/Gloomhaven%20Monster%20Stats.xlsx?raw=true',#'D:\gloomhaven_streamlit\Gloomhaven Monster Stats.xlsx',
     engine='openpyxl',
     sheet_name='Monsters',
     skiprows=0,
