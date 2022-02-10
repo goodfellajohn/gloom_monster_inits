@@ -1,0 +1,3 @@
+openpxyl
+pandas
+streamlit
