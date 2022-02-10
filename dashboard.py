@@ -22,7 +22,7 @@ df = pd.read_excel(
 df2 = df[['Monster','Initiatives ','Attributes','Scenario Level']]
 #df = get_data_from_excel()
 
-image = Image.open('https://github.com/goodfellajohn/gloom_monster_inits/raw/main/jeez.jpg')
+image = Image.open('https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg')
 
 #--- SIDEBAR ----
 st.sidebar.header("Select Scenario Level & Monsters:")
