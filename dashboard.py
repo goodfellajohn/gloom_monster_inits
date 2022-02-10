@@ -22,7 +22,9 @@ df = pd.read_excel(
 df2 = df[['Monster','Initiatives ','Attributes','Scenario Level']]
 #df = get_data_from_excel()
 
-image = Image.open('https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg')
+htp="https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg"
+#st.image(htp, caption= 'logo', width=350)
+#image = Image.open('https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg')
 
 #--- SIDEBAR ----
 st.sidebar.header("Select Scenario Level & Monsters:")
@@ -54,7 +56,7 @@ st.markdown("## Minimal List")
 st.dataframe(df_selection_filtered)
 st.markdown("## :bar_chart: Detailed List of all values below")
 st.dataframe(df_selection)
-st.image(image, caption='When Sister Mary Clarence exhausts....')
+st.image(htp, caption='When Sister Mary Clarence exhausts....', width=350)
 
 
 
