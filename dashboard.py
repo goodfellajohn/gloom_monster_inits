@@ -51,7 +51,7 @@ df_selection = df.query(
 
 
 #--- MAINPAGE -----
-st.title(":hocho: Sister Mary Clarence & Vlad II Killeu's Conquest :droplet::bear:")
+st.title(":hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 st.markdown("## Minimal List")
 st.dataframe(df_selection_filtered)
 st.markdown("## :bar_chart: Detailed List of all values below")
