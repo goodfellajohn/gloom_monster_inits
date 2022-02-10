@@ -27,7 +27,7 @@ def color_elite(val):
     return f'background-color: {color}'
   
 def highlight_elite(s):
-    return ['background-color: yellow']*len(s) if "Elite" in s.`Monster Level` else ['background-color: ']*len(s)
+    return ['background-color: yellow']*len(s) if "Elite" in s.['Monster Level'] else ['background-color: ']*len(s)
 
 htp="https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg"
 #st.image(htp, caption= 'logo', width=350)
