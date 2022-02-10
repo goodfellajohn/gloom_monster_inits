@@ -65,7 +65,7 @@ st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
 st.markdown("## Detailed List of all values below")
 st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
-st.markdown("## /n/n/n/n")
+st.markdown("## \n\n\n\n")
 st.image(htp, caption='When Sister Mary Clarence exhausts....', width=350)
 
 
