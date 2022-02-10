@@ -45,10 +45,10 @@ df_selection = df.query(
 
 
 #--- MAINPAGE -----
-st.title(":bear: Sister Mary Clarence & Vlad II Killeu's Conquest")
+st.title(":bear: Sister Mary Clarence & Vlad II Killeu's Conquest :hocho:")
 st.markdown("## Short List")
 st.dataframe(df_selection_filtered)
-st.markdown("## :bear: Detailed List of all values below")
+st.markdown("## :bar_chart: Detailed List of all values below")
 st.dataframe(df_selection)
 
 
