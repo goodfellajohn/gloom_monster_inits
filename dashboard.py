@@ -1,5 +1,7 @@
 import pandas as pd
 import streamlit as st
+from PIL import Image
+
 
 st.set_page_config(page_title="Leanne's Gloom Dashboard",
                    page_icon=":bear:",
@@ -20,6 +22,8 @@ df = pd.read_excel(
     
 df2 = df[['Monster','Initiatives ','Attributes','Scenario Level']]
 #df = get_data_from_excel()
+
+image = Image.open('https://github.com/goodfellajohn/gloom_monster_inits/raw/main/jeez.jpg')
 
 #--- SIDEBAR ----
 st.sidebar.header("Select Scenario Level & Monsters:")
@@ -51,6 +55,7 @@ st.markdown("## Minimal List")
 st.dataframe(df_selection_filtered)
 st.markdown("## :bar_chart: Detailed List of all values below")
 st.dataframe(df_selection)
+st.image(image, caption='When Sister Mary Clarence exhausts....')
 
 
 
