@@ -46,8 +46,9 @@ df_selection = df.query(
 
 #--- MAINPAGE -----
 st.title(":bear: Sister Mary Clarence & Vlad II Killeu's Conquest")
-st.markdown("##")
+st.markdown("## Short List")
 st.dataframe(df_selection_filtered)
+st.markdown("## :bear: Detailed List of all values below")
 st.dataframe(df_selection)
 
 
