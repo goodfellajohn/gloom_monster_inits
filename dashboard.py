@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 
 st.set_page_config(page_title="Leanne's Bent Carrot Dashboard",
-                   page_icon=":eggplant:",
+                   page_icon=":bear:",
                    layout="wide"
                     )
  
@@ -41,7 +41,7 @@ df_selection = df.query(
 st.dataframe(df_selection)
 
 #--- MAINPAGE -----
-st.title(":us: Sister Mary Clarence & Vlad II Killeu's Conquest")
+st.title(":bear: Sister Mary Clarence & Vlad II Killeu's Conquest")
 st.markdown("##")
 
 
