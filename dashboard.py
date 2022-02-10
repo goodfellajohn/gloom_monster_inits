@@ -55,5 +55,11 @@ hide_st_style = """
             header {visibility: hidden;}
             </style>
             """
+hide_dataframe_row_index = """
+            <style>
+            .row_heading.level0 {display:none;}
+            .blank {display:none;}
+            </style>
+            """
 
-st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_st_style,hide_dataframe_row_index, unsafe_allow_html=True)
