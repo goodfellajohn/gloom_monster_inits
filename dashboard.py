@@ -3,7 +3,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Leanne's Bent Carrot Dashboard",
                    page_icon=":bear:",
-                   layout="centered",
+                   layout="wide",
                    initial_sidebar_state = "expanded"
                     )
  
