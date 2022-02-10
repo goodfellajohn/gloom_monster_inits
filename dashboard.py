@@ -33,9 +33,14 @@ monster_type = st.sidebar.multiselect(
     default=df["Monster"][10]
 )
 
+columns = st.multiselect(
+  "Filter columns",
+  options=list(df.columns),
+  default=list(df.columns)
+)
 
 df_selection = df.query(
-    "`Scenario Level` == @scenario_level & Monster == @monster_type"
+    "`Scenario Level` == @scenario_level & Monster == @monster_type & df.columns ==@columns"
 )
 
 
