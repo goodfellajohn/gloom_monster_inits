@@ -82,9 +82,16 @@ df_selection = df.query(
     "`Scenario Level` == @scenario_level & Monster == @monster_type"
 )
 
+
 barh_plot = px.bar(b,  orientation='h')
 barh_plot.layout.showlegend = False
 
+b2 = df_selection['Initiatives '].str.split(',', expand=True)
+b2['Monster'] = df_selection['Monster']
+b2 = b2.drop_duplicates()
+b2 = b2.pivot_table(index=['Monster'])
+barh_selected_plot = px.bar(b2,  orientation='h')
+barh_selected_plot.layout.showlegend = False
 
 # =============================================================================
 # barh_plot.update_layout(
@@ -103,6 +110,7 @@ st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
 st.markdown("## Detailed List of all values below")
 st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
+st.write(barh_selected_plot)
 st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\n")
 st.markdown("## Stacked speed of all monsters (click to expand to see all)")
 st.write(barh_plot)
