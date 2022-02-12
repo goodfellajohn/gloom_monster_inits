@@ -71,7 +71,7 @@ scenario_level = st.sidebar.multiselect(
 monster_type = st.sidebar.multiselect(
     "Select the Monster:",
     options=df["Monster"].unique(),
-    default=df["Monster"].unique()[7]
+    default=None#df["Monster"].unique()[7]
 )
 
 df_selection_filtered = df2.query(
