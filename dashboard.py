@@ -106,7 +106,7 @@ barh_selected_plot.layout.showlegend = False
 st.title(":hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 st.markdown("## Minimal List")
 #st.dataframe(df_selection_filtered)
-st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
+st.dataframe(df_selection_filtered['Monster'].style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
 st.markdown("## Detailed List of all values below")
 st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
