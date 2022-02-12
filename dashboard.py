@@ -90,7 +90,7 @@ b2 = df_selection['Initiatives '].str.split(',', expand=True)
 b2['Monster'] = df_selection['Monster']
 b2 = b2.drop_duplicates()
 b2 = b2.pivot_table(index=['Monster'])
-barh_selected_plot = px.bar(b2,  orientation='h')
+barh_selected_plot = px.bar(b2,  orientation='h', text=values)
 barh_selected_plot.layout.showlegend = False
 
 # =============================================================================
