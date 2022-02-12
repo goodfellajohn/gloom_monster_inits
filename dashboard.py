@@ -104,12 +104,14 @@ barh_selected_plot.layout.showlegend = False
 
 #--- MAINPAGE -----
 st.title(":hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
-st.markdown("## Minimal List")
+st.markdown("## Important Details")
 #st.dataframe(df_selection_filtered)
-st.dataframe(df_selection_filtered['Monster'].style.apply(highlight_elite, axis=1))
+st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
-st.markdown("## Detailed List of all values below")
+st.markdown("## Complete Table")
 st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
+st.markdown("## Monster Initiatives Stacked")
+st.markdown("### Slowest monsters = longest bars")
 st.write(barh_selected_plot)
 st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\n")
 st.markdown("## Stacked speed of all monsters (click to expand to see all)")
