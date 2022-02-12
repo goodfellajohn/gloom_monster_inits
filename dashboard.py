@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
+import plotly.express as px
 from PIL import Image
+
 
 st.set_page_config(page_title="Leanne's Gloom Dashboard",
                    page_icon=":bear:",
@@ -20,6 +22,31 @@ df = pd.read_excel(
     )
     
 df2 = df[['Monster','Initiatives ','Attributes','Scenario Level', 'Monster Level']]
+
+df3 = df[['Monster', 'Initiatives ']]
+
+b = df3['Initiatives '].str.split(',', expand=True)
+b['Monster'] = df3['Monster']
+b = b.drop_duplicates()
+b = b.pivot_table(index=['Monster'])
+#b.plot(kind='bar', legend = False )
+#b.plot.barh(legend=False)
+#len(b['Monster'])
+#len(b.columns[0:7])
+#b.boxplot(by=['Monster'])
+
+#df4 = pd.DataFrame(df[['Monster', 'Initiatives ']]).groupby("Monster")
+
+# =============================================================================
+# x = {"Monster" : df['Monster'],
+#      "Initiative" : (df['Initiatives '].str.split(',', expand=False))
+# }
+# 
+# x 
+# =============================================================================
+
+
+# 
 #df = get_data_from_excel()
 
 def color_elite(val):
@@ -55,7 +82,18 @@ df_selection = df.query(
     "`Scenario Level` == @scenario_level & Monster == @monster_type"
 )
 
+barh_plot = px.bar(b,  orientation='h')
+barh_plot.layout.showlegend = False
 
+
+# =============================================================================
+# barh_plot.update_layout(
+#     plot_bgcolor="rgba(0,0,0,0)",
+#     xaxis=(dict(showgrid=False))
+# )
+# =============================================================================
+
+#st.plotly_chart(fig_product_sales)
 
 #--- MAINPAGE -----
 st.title(":hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
@@ -67,7 +105,7 @@ st.markdown("## Detailed List of all values below")
 st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
 st.markdown("## \n\n\n\n")
 st.image(htp, caption='When Sister Mary Clarence exhausts....', width=350)
-
+st.write(barh_plot)
 
 
 # Hiding the hamburger menu, banner color, and footer mentioning streamlit
