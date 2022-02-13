@@ -49,6 +49,8 @@ b = b.pivot_table(index=['Monster'])
 # 
 #df = get_data_from_excel()
 
+   
+
 def color_elite(val):
     color = 'yellow' if "Elite" in val else ''
     return f'background-color: {color}'
@@ -93,6 +95,20 @@ b2 = b2.pivot_table(index=['Monster'])
 barh_selected_plot = px.bar(b2,  orientation='h')
 barh_selected_plot.layout.showlegend = False
 
+
+prob_df = b2
+h_25 = (b2[b2.columns[0:8]] < 25 ).sum(1)
+prob_df['p_25'] = ((h_25/8)*100.00)
+h_50 = (b2[b2.columns[0:8]] < 50 ).sum(1)
+prob_df['p_50'] = ((h_50/8)*100.00)
+h_75 = (b2[b2.columns[0:8]] < 75 ).sum(1)
+prob_df['p_75'] = ((h_75/8)*100.00)
+prob_df['Monster_Names'] = prob_df.index
+k = pd.DataFrame(prob_df['Monster_Names'])
+k['Percent of Cards that are faster than a 25'] = round(prob_df['p_25'],2)
+k['Percent of Cards that are faster than a 50'] = round(prob_df['p_50'],2)
+k['Percent of Cards that are faster than a 75'] = round(prob_df['p_75'],2)
+
 # =============================================================================
 # barh_plot.update_layout(
 #     plot_bgcolor="rgba(0,0,0,0)",
@@ -103,11 +119,13 @@ barh_selected_plot.layout.showlegend = False
 #st.plotly_chart(fig_product_sales)
 
 #--- MAINPAGE -----
-st.title(":hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
+st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 st.markdown("## Important Details")
 #st.dataframe(df_selection_filtered)
 st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
+st.markdown("## Enemies' Initiative Speed Likelihoods")
+st.dataframe(k)
 st.markdown("## Complete Table")
 st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
 st.markdown("## Monster Initiatives Stacked Barchart below:")
@@ -118,6 +136,7 @@ st.markdown("## Stacked speed of all monsters (click to expand to see all)")
 st.write(barh_plot)
 st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\n")
 st.image(htp, caption='When Sister Mary Clarence exhausts....', width=350)
+#st.dataframe(prob_df)
 
 
 
