@@ -105,9 +105,9 @@ h_75 = (b2[b2.columns[0:8]] < 75 ).sum(1)
 prob_df['p_75'] = ((h_75/8)*100.00)
 prob_df['Monster_Names'] = prob_df.index
 k = pd.DataFrame(prob_df['Monster_Names'])
-k['Percent of Cards that are faster than a 25'] = round(prob_df['p_25'],2)
-k['Percent of Cards that are faster than a 50'] = round(prob_df['p_50'],2)
-k['Percent of Cards that are faster than a 75'] = round(prob_df['p_75'],2)
+k['% of deck faster than 25'] = round(prob_df['p_25'],2)
+k['% of deck faster than 50'] = round(prob_df['p_50'],2)
+k['% of deck faster than 75'] = round(prob_df['p_75'],2)
 
 # =============================================================================
 # barh_plot.update_layout(
