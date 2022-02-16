@@ -3,6 +3,7 @@ import streamlit as st
 import plotly.express as px
 from PIL import Image
 
+pd.set_option('display.float_format','{:.0f}'.format)
 
 st.set_page_config(page_title="Leanne's Gloom Dashboard",
                    page_icon=":bear:",
