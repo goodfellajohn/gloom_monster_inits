@@ -98,7 +98,7 @@ barh_selected_plot.layout.showlegend = False
 
 prob_df = b2
 h_25 = (b2[b2.columns[0:8]] < 25 ).sum(1)
-prob_df['p_25'] = round(((h_25/8)*100.00),2)
+prob_df['p_25'] = ((h_25/8)*100.00)
 h_50 = (b2[b2.columns[0:8]] < 50 ).sum(1)
 prob_df['p_50'] = ((h_50/8)*100.00)
 h_75 = (b2[b2.columns[0:8]] < 75 ).sum(1)
