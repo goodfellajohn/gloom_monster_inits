@@ -122,7 +122,7 @@ k['% of deck faster than 75'] = round(prob_df['p_75'],2)
 st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 st.markdown("## Important Details")
 #st.dataframe(df_selection_filtered)
-st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
+st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1).hide_index())
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
 st.markdown("## Enemies' Initiative Speed Likelihoods")
 st.dataframe(k)
@@ -154,6 +154,7 @@ hide_dataframe_row_index = """
             .blank {display:none;}
             </style>
             """
+
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
