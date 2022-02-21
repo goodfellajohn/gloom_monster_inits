@@ -114,11 +114,12 @@ k['% of deck faster than 50'] = round(prob_df['p_50'],2)
 k['% of deck faster than 75'] = round(prob_df['p_75'],2)
 
 #Emoji incorporation
-emoji_selected = df_selection[['Monster','Attributes']]
+emoji_selected = df_selection[['Monster','Monster Level','Attributes']].copy()
 emoji_selected.Attributes = emoji_selected.Attributes.replace(np.nan,'Dweeb').copy()
 emoji_selected['emoji_attributes'] = emoji_selected['Attributes'].fillna('Dweeb')
 emoji_selected.loc[emoji_selected['emoji_attributes'] != 'Dweeb', 'emoji_attributes'] = emoji_selected['Attributes']
 emoji_selected['emoji_attributes'] = emoji_selected['emoji_attributes'].str.replace("Poison", ":skull:").str.replace("Flying", ":airplane:").str.replace("Curse", ":zap:").str.replace("Advantage", ":muscle:").str.replace("Shield", ":beginner:").str.replace("Range", ":signal_strength:").str.replace("Disarm", ":cop:").str.replace("Muddle",":question:").str.replace("Retaliate", ":leftwards_arrow_with_hook:").str.replace("Immobilize", ":traffic_light:").str.replace("Pierce",":cupid:").str.replace("Wound",":broken_heart:").str.replace("Target",":x:").str.replace("Attackers gain Disadvantage", "Attackers gain :question:").str.replace(";"," ").copy()
+tab_emoji = emoji_selected.to_markdown()
 #tab_emoji = (tabulate(emoji_selected, tablefmt="pipe", headers="keys"))
 
 # =============================================================================
@@ -143,8 +144,9 @@ st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
 st.markdown("## Monster Initiatives Stacked Barchart below:")
 st.markdown("#### *Slowest monsters will have the longest bars as initiatives are aggregated by Sum()")
 st.write(barh_selected_plot)
-#st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Monster Abilities")
-#st.markdown(tab_emoji)
+st.markdown("### \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Abilities")
+st.markdown("Poison = :skull: || Flying = :airplane: || Curse = :zap:     \nAdvantage = :muscle: || Shield = :beginner: || Range = :signal_strength:     \nDisarm = :cop: || Muddle = :question:  ||  Retaliate = :leftwards_arrow_with_hook:     \nImmobilize = :traffic_light: || Pierce = :cupid: || Wound = :broken_heart:     \nTarget = :x:     \nAttackers gain Disadvantage = Attackers gain :question:")
+st.markdown(tab_emoji)
 st.markdown("## Stacked speed of all monsters (click to expand to see all)")
 st.write(barh_plot)
 st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\n")
