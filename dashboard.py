@@ -4,7 +4,7 @@ import streamlit as st
 import plotly.express as px
 from PIL import Image
 
-from tabulate import tabulate
+from tabulate import tabulate as tabulate
 
 
 st.set_page_config(page_title="Leanne's Gloom Dashboard",
