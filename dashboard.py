@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 from PIL import Image
-from tabulate import tabulate
+#from tabulate import tabulate
 
 
 st.set_page_config(page_title="Leanne's Gloom Dashboard",
@@ -139,14 +139,14 @@ st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
 st.markdown("## Enemies' Initiative Speed Likelihoods")
 st.dataframe(k)
+st.markdown("### \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Abilities")
+st.markdown("Poison = :skull: || Flying = :airplane: || Curse = :zap:     \nAdvantage = :muscle: || Shield = :beginner: || Range = :signal_strength:     \nDisarm = :cop: || Muddle = :question:  ||  Retaliate = :leftwards_arrow_with_hook:     \nImmobilize = :traffic_light: || Pierce = :cupid: || Wound = :broken_heart:     \nTarget = :x:     \nAttackers gain Disadvantage = Attackers gain :question:")
+st.markdown(tab_emoji)
 st.markdown("## Complete Table")
 st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
 st.markdown("## Monster Initiatives Stacked Barchart below:")
 st.markdown("#### *Slowest monsters will have the longest bars as initiatives are aggregated by Sum()")
 st.write(barh_selected_plot)
-st.markdown("### \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Abilities")
-st.markdown("Poison = :skull: || Flying = :airplane: || Curse = :zap:     \nAdvantage = :muscle: || Shield = :beginner: || Range = :signal_strength:     \nDisarm = :cop: || Muddle = :question:  ||  Retaliate = :leftwards_arrow_with_hook:     \nImmobilize = :traffic_light: || Pierce = :cupid: || Wound = :broken_heart:     \nTarget = :x:     \nAttackers gain Disadvantage = Attackers gain :question:")
-st.markdown(tab_emoji)
 st.markdown("## Stacked speed of all monsters (click to expand to see all)")
 st.write(barh_plot)
 st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\n")
