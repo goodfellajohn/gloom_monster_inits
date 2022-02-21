@@ -10,16 +10,18 @@ st.set_page_config(page_title="Leanne's Gloom Dashboard",
                    initial_sidebar_state = "expanded"
                     )
  
-#@st.cache 
-#def get_data_from_excel():
-df = pd.read_excel(
-    io='https://github.com/goodfellajohn/gloom_monster_inits/blob/c8c5eb9ba4794034b4b01a42089c1573230ec3ff/Gloomhaven%20Monster%20Stats.xlsx?raw=true',#'D:\gloomhaven_streamlit\Gloomhaven Monster Stats.xlsx',
-    engine='openpyxl',
-    sheet_name='Monsters',
-    skiprows=0,
-    usecols='A:L',
-    nrows=545,
-    )
+@st.cache 
+def get_data_from_excel():
+    df = pd.read_excel(
+        io='https://github.com/goodfellajohn/gloom_monster_inits/blob/c8c5eb9ba4794034b4b01a42089c1573230ec3ff/Gloomhaven%20Monster%20Stats.xlsx?raw=true',#'D:\gloomhaven_streamlit\Gloomhaven Monster Stats.xlsx',
+        engine='openpyxl',
+        sheet_name='Monsters',
+        skiprows=0,
+        usecols='A:L',
+        nrows=545,
+        )
+    return df
+df = get_data_from_excel()
     
 df2 = df[['Monster','Initiatives ','Attributes','Scenario Level', 'Monster Level']]
 
