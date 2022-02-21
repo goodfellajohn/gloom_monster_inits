@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 from PIL import Image
-
+from tabulate import tabulate
 
 st.set_page_config(page_title="Leanne's Gloom Dashboard",
                    page_icon=":bear:",
@@ -111,6 +111,14 @@ k['% of deck faster than 25'] = round(prob_df['p_25'],2)
 k['% of deck faster than 50'] = round(prob_df['p_50'],2)
 k['% of deck faster than 75'] = round(prob_df['p_75'],2)
 
+#Emoji incorporation
+emoji_selected = df_selection[['Monster','Attributes']]
+emoji_selected.Attributes = emoji_selected.Attributes.replace(np.nan,'Dweeb').copy()
+emoji_selected['emoji_attributes'] = emoji_selected['Attributes'].fillna('Dweeb')
+emoji_selected.loc[emoji_selected['emoji_attributes'] != 'Dweeb', 'emoji_attributes'] = emoji_selected['Attributes']
+emoji_selected['emoji_attributes'] = emoji_selected['emoji_attributes'].str.replace("Poison", ":skull:").str.replace("Flying", ":airplane:").str.replace("Curse", ":zap:").str.replace("Advantage", ":muscle:").str.replace("Shield", ":beginner:").str.replace("Range", ":signal_strength:").str.replace("Disarm", ":cop:").str.replace("Muddle",":question:").str.replace("Retaliate", ":leftwards_arrow_with_hook:").str.replace("Immobilize", ":traffic_light:").str.replace("Pierce",":cupid:").str.replace("Wound",":broken_heart:").str.replace("Target",":x:").str.replace("Attackers gain Disadvantage", "Attackers gain :question:").copy()
+tab_emoji = (tabulate(emoji_selected, tablefmt="pipe", headers="keys"))
+
 # =============================================================================
 # barh_plot.update_layout(
 #     plot_bgcolor="rgba(0,0,0,0)",
@@ -133,13 +141,13 @@ st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
 st.markdown("## Monster Initiatives Stacked Barchart below:")
 st.markdown("#### *Slowest monsters will have the longest bars as initiatives are aggregated by Sum()")
 st.write(barh_selected_plot)
-st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\n")
+st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Monster Abilities")
+st.markdown(tab_emoji)
 st.markdown("## Stacked speed of all monsters (click to expand to see all)")
 st.write(barh_plot)
 st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\n")
 st.image(htp, caption='When Sister Mary Clarence exhausts....', width=350)
 #st.dataframe(prob_df)
-
 
 
 # Hiding the hamburger menu, banner color, and footer mentioning streamlit
