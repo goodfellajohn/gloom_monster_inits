@@ -3,7 +3,8 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 from PIL import Image
-from tabula import tabulate
+#from tabulate import tabulate
+import tabulate
 
 st.set_page_config(page_title="Leanne's Gloom Dashboard",
                    page_icon=":bear:",
