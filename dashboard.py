@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 from PIL import Image
-#from pandas import tabulate
+from tabluate import tabulate
 
 
 st.set_page_config(page_title="Leanne's Gloom Dashboard",
@@ -119,8 +119,8 @@ emoji_selected.Attributes = emoji_selected.Attributes.replace(np.nan,'Dweeb').co
 emoji_selected['emoji_attributes'] = emoji_selected['Attributes'].fillna('Dweeb')
 emoji_selected.loc[emoji_selected['emoji_attributes'] != 'Dweeb', 'emoji_attributes'] = emoji_selected['Attributes']
 emoji_selected['emoji_attributes'] = emoji_selected['emoji_attributes'].str.replace("Poison", ":skull:").str.replace("Flying", ":airplane:").str.replace("Curse", ":zap:").str.replace("Advantage", ":muscle:").str.replace("Shield", ":beginner:").str.replace("Range", ":signal_strength:").str.replace("Disarm", ":cop:").str.replace("Muddle",":question:").str.replace("Retaliate", ":leftwards_arrow_with_hook:").str.replace("Immobilize", ":traffic_light:").str.replace("Pierce",":cupid:").str.replace("Wound",":broken_heart:").str.replace("Target",":x:").str.replace("Attackers gain Disadvantage", "Attackers gain :question:").str.replace(";"," ").copy()
-tab_emoji = emoji_selected.to_markdown()
-#tab_emoji = (tabulate(emoji_selected, tablefmt="pipe", headers="keys"))
+#tab_emoji = emoji_selected.to_markdown()
+tab_emoji = (tabulate(emoji_selected, tablefmt="pipe", headers="keys"))
 
 # =============================================================================
 # barh_plot.update_layout(
