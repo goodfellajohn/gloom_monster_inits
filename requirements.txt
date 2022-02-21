@@ -3,4 +3,3 @@ numpy
 streamlit
 openpyxl
 plotly.express
-tabulate
