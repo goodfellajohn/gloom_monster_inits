@@ -135,6 +135,26 @@ tab_emoji = (tb.tabulate(emoji_selected, tablefmt="pipe", headers="keys"))
 #st.plotly_chart(fig_product_sales)
 
 #--- MAINPAGE -----
+def set_bg_hack_url():
+    '''
+    A function to unpack an image from url and set as bg.
+    Returns
+    -------
+    The background.
+    '''        
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
+             background-size: cover;
+             opacity: 0.05;
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+set_bg_hack_url()
 st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 #st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{":sunny::hocho: Sister Mary Clarence & Vlad II Killéus Conquest :droplet::bear:”"}</h1>', unsafe_allow_html=True)
 st.markdown("## Important Details")
@@ -173,26 +193,7 @@ hide_dataframe_row_index = """
             </style>
             """
 
-def set_bg_hack_url():
-    '''
-    A function to unpack an image from url and set as bg.
-    Returns
-    -------
-    The background.
-    '''        
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
-             background-size: cover;
-             opacity: 0.05;
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-set_bg_hack_url()
+
 # MAKE SURE TO COMMENT OUT NEXT LINE IF YOU WANT FUNCTION FOR BACKGROUND TO RUN 
 #st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
