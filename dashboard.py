@@ -194,5 +194,5 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 #     unsafe_allow_html=True
 # )
 
-st.markdown(hide_st_style, unsafe_allow_html=True)
+#st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
