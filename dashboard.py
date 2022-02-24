@@ -103,12 +103,12 @@ barh_selected_plot = px.bar(b2,  orientation='h',title = "Every Monster Attack C
 barh_selected_plot.layout.showlegend = False
 
 
-prob_df = b2
-h_25 = (b2[b2.columns[0:8]] < 25 ).sum(1)
+prob_df = b2.copy()
+h_25 = (prob_df[prob_df.columns[0:8]] < 25 ).sum(1)
 prob_df['p_25'] = ((h_25/8)*100.00)
-h_50 = (b2[b2.columns[0:8]] < 50 ).sum(1)
+h_50 = (prob_df[prob_df.columns[0:8]] < 50 ).sum(1)
 prob_df['p_50'] = ((h_50/8)*100.00)
-h_75 = (b2[b2.columns[0:8]] < 75 ).sum(1)
+h_75 = (prob_df[prob_df.columns[0:8]] < 75 ).sum(1)
 prob_df['p_75'] = ((h_75/8)*100.00)
 prob_df['Monster_Names'] = prob_df.index
 k = pd.DataFrame(prob_df['Monster_Names'])
@@ -171,58 +171,26 @@ hide_dataframe_row_index = """
             .blank {display:none;}
             </style>
             """
-# page_bg_img = """
-#             <style>
-#             body {background-image: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
-#             background-size: cover;}
-#             </style>
-#             """
 
-#st.markdown(page_bg_img, unsafe_allow_html=True)
+# def set_bg_hack_url():
+#     '''
+#     A function to unpack an image from url and set as bg.
+#     Returns
+#     -------
+#     The background.
+#     '''        
+#     st.markdown(
+#          f"""
+#          <style>
+#          .stApp {{
+#              background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
+#              background-size: cover
+#          }}
+#          </style>
+#          """,
+#          unsafe_allow_html=True
+#      )
+# set_bg_hack_url()
 
-def set_bg_hack_url():
-    '''
-    A function to unpack an image from url and set as bg.
-    Returns
-    -------
-    The background.
-    '''
-        
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-    
-set_bg_hack_url()
-
-def set_sb_hack_url():
-    '''
-    A function to unpack an image from url and set as sidebar.
-    Returns
-    -------
-    The background.
-    '''
-        
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             sidebar: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
-             sidebar-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-    
-set_sb_hack_url()
-
-#st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
