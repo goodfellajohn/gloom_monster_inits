@@ -193,14 +193,15 @@ hide_dataframe_row_index = """
 #      )
 # set_bg_hack_url()
 st.markdown(
-    """
-<style>
-.sidebar .sidebar-content {
-    background-image: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
-}
-</style>
-""",
-unsafe_allow_html=True,
+  f"""
+  <style>
+  .stApp {{
+      .sidebar .sidebar-content {
+      background-image: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
+  }
+  </style>
+  """,
+  unsafe_allow_html=True
 )
 
 #st.markdown(hide_st_style, unsafe_allow_html=True)
