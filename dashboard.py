@@ -115,7 +115,7 @@ k = pd.DataFrame(prob_df['Monster_Names'])
 k['% of deck faster than 25'] = round(prob_df['p_25'],2)
 k['% of deck faster than 50'] = round(prob_df['p_50'],2)
 k['% of deck faster than 75'] = round(prob_df['p_75'],2)
-k
+k.style.hide_index()
 
 #Emoji incorporation
 emoji_selected = df_selection[['Monster','Monster Level','Attributes']].copy()
@@ -164,7 +164,7 @@ st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
 #st.markdown(f'<h2 style="background: brown;font-size:28px;font-family:Helvetica;">{"Enemies Initiative Speed Likelihoods"}</h2>', unsafe_allow_html=True)
 st.markdown("Enemies Initiative Speed Likelihoods")
-st.dataframe(k.style.hide_index())#.style.set_properties(**{'background-color': 'black',
+st.dataframe(k)#.style.set_properties(**{'background-color': 'black',
                #            'color': 'green'}))
 st.markdown("### \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Abilities")
 st.markdown("Poison = :skull: || Flying = :airplane: || Curse = :zap: || Advantage = :muscle: || Shield = :beginner: || Range = :signal_strength:     \nDisarm = :cop: || Muddle = :question:  ||  Retaliate = :leftwards_arrow_with_hook: || Immobilize = :traffic_light: || Pierce = :cupid: || Wound = :broken_heart: || Target = :x:     \nAttackers gain Disadvantage = Attackers gain :question:")
