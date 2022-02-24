@@ -136,45 +136,49 @@ tab_emoji = (tb.tabulate(emoji_selected, tablefmt="pipe", headers="keys"))
 #st.plotly_chart(fig_product_sales)
 
 #--- MAINPAGE -----
-def set_bg_hack_url():
-    '''
-    A function to unpack an image from url and set as bg.
-    Returns
-    -------
-    The background.
-    '''        
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
-             background-size: cover;
-             opacity: 0.8;
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-set_bg_hack_url()
+# def set_bg_hack_url():
+#     '''
+#     A function to unpack an image from url and set as bg.
+#     Returns
+#     -------
+#     The background.
+#     '''        
+#     st.markdown(
+#          f"""
+#          <style>
+#          .stApp {{
+#              background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
+#              background-size: cover;
+#              opacity: 0.8;
+#          }}
+#          </style>
+#          """,
+#          unsafe_allow_html=True
+#      )
+# set_bg_hack_url()
 
-#st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
-st.markdown(f'<h1 style="background: brown;font-size:30px;font-family:Helvetica;">{"Sister Mary Clarence & Vlad II Killéus Conquest"}</h1>', unsafe_allow_html=True)
-st.markdown(f'<h4 style="background: brown;font-size:24px;font-family:Helvetica;">{"Important Details"}</h4>', unsafe_allow_html=True)
+st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:\nImportant Details")
+#st.markdown(f'<h1 style="background: brown;font-size:30px;font-family:Helvetica;">{"Sister Mary Clarence & Vlad II Killéus Conquest"}</h1>', unsafe_allow_html=True)
+#st.markdown(f'<h4 style="background: brown;font-size:24px;font-family:Helvetica;">{"Important Details"}</h4>', unsafe_allow_html=True)
 st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
-st.markdown(f'<h2 style="background: brown;font-size:28px;font-family:Helvetica;">{"Enemies Initiative Speed Likelihoods"}</h2>', unsafe_allow_html=True)
-st.dataframe(k.style.set_properties(**{'background-color': 'black',
-                           'color': 'green'}))
+#st.markdown(f'<h2 style="background: brown;font-size:28px;font-family:Helvetica;">{"Enemies Initiative Speed Likelihoods"}</h2>', unsafe_allow_html=True)
+st.markdown("Enemies Initiative Speed Likelihoods")
+st.dataframe(k)#.style.set_properties(**{'background-color': 'black',
+               #            'color': 'green'}))
 st.markdown("### \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Abilities")
 st.markdown("Poison = :skull: || Flying = :airplane: || Curse = :zap: || Advantage = :muscle: || Shield = :beginner: || Range = :signal_strength:     \nDisarm = :cop: || Muddle = :question:  ||  Retaliate = :leftwards_arrow_with_hook: || Immobilize = :traffic_light: || Pierce = :cupid: || Wound = :broken_heart: || Target = :x:     \nAttackers gain Disadvantage = Attackers gain :question:")
 st.markdown(tab_emoji)
 st.markdown("## Complete Table")
 st.write(df_selection.style.apply(highlight_elite,axis=1))
 #st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
-st.markdown(f'<h2 style="background: brown;font-size:26px;font-family:Helvetica;">{"Monster Initiatives Stacked Barchart below:"}</h2>', unsafe_allow_html=True)
-st.markdown(f'<h4 style="background: brown;font-size:24px;font-family:Helvetica;">{"*Slowest monsters will have the longest bars as initiatives are aggregated by Sum()"}</h4>', unsafe_allow_html=True)
+#st.markdown(f'<h2 style="background: brown;font-size:26px;font-family:Helvetica;">{"Monster Initiatives Stacked Barchart below:"}</h2>', unsafe_allow_html=True)
+st.markdown("Monster Initiatives Stacked Barchart below:")
+#st.markdown(f'<h4 style="background: brown;font-size:24px;font-family:Helvetica;">{"*Slowest monsters will have the longest bars as initiatives are aggregated by Sum()"}</h4>', unsafe_allow_html=True)
+st.markdown("*Slowest monsters will have the longest bars as initiatives are aggregated by Sum()")
 st.write(barh_selected_plot)
-st.markdown(f'<h4 style="background: brown;font-size:24px;font-family:Helvetica;">{"Stacked speed of all monsters (click to expand to see all)"}</h4>', unsafe_allow_html=True)
+#st.markdown(f'<h4 style="background: brown;font-size:24px;font-family:Helvetica;">{"Stacked speed of all monsters (click to expand to see all)"}</h4>', unsafe_allow_html=True)
+st.markdown("Stacked speed of all monsters (click to expand to see all)")
 st.write(barh_plot)
 st.markdown("## \n\n\n\n\n\n\n\n\n\n\n\n\n")
 st.image(htp, caption='When Sister Mary Clarence exhausts....', width=350)
@@ -198,5 +202,5 @@ hide_dataframe_row_index = """
 
 
 # MAKE SURE TO COMMENT OUT NEXT LINE IF YOU WANT FUNCTION FOR BACKGROUND TO RUN 
-#st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
