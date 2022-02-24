@@ -162,8 +162,9 @@ st.markdown(f'<h1 style="background: brown;font-size:30px;font-family:Helvetica;
 st.markdown(f'<h4 style="background: brown;font-size:24px;font-family:Helvetica;">{"Important Details"}</h4>', unsafe_allow_html=True)
 st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
-st.markdown("## Enemies' Initiative Speed Likelihoods")
-st.dataframe(k)
+st.markdown(f'<h2 style="background: brown;font-size:28px;font-family:Helvetica;">{"Enemies' Initiative Speed Likelihoods"}</h2>', unsafe_allow_html=True)
+st.dataframe(k.style.set_properties(**{'background-color': 'black',
+                           'color': 'green'}))
 st.markdown("### \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Abilities")
 st.markdown("Poison = :skull: || Flying = :airplane: || Curse = :zap: || Advantage = :muscle: || Shield = :beginner: || Range = :signal_strength:     \nDisarm = :cop: || Muddle = :question:  ||  Retaliate = :leftwards_arrow_with_hook: || Immobilize = :traffic_light: || Pierce = :cupid: || Wound = :broken_heart: || Target = :x:     \nAttackers gain Disadvantage = Attackers gain :question:")
 st.markdown(tab_emoji)
