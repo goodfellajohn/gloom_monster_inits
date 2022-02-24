@@ -171,13 +171,28 @@ hide_dataframe_row_index = """
             .blank {display:none;}
             </style>
             """
-page_bg_img = """
-            <style>
-            body {background-image: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpg");
-            background-size: cover;}
-            </style>
-            """
+#page_bg_img = """
+#            <style>
+#            body {background-image: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpg");
+#            background-size: cover;}
+#            </style>
+#            """
 
-st.markdown(page_bg_img, unsafe_allow_html=True)
+#st.markdown(page_bg_img, unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg")
+    }
+   .sidebar .sidebar-content {
+        background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg")
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
