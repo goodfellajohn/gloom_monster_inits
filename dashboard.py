@@ -156,10 +156,10 @@ def set_bg_hack_url():
      )
 set_bg_hack_url()
 
-st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
+#st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 #st.markdown(<span style='background :yellow' > Background color is yellow </span>)
-st.markdown(f'<h1 style="background: yellow;font-size:24px;">:sunny::hocho:{"Sister Mary Clarence & Vlad II Killéus Conquest”"}:droplet::bear:</h1>', unsafe_allow_html=True)
-st.markdown("## Important Details")
+st.markdown(f'<h1 style="background: yellow;font-size:24px;">{"Sister Mary Clarence & Vlad II Killéus Conquest”"}</h1>', unsafe_allow_html=True)
+st.markdown("## style="background: yellow; Important Details")
 #st.dataframe(df_selection_filtered)
 st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
 #st.dataframe(df_selection_filtered.style.applymap(color_elite, subset=['Monster Level']))
