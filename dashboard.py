@@ -133,6 +133,11 @@ tab_emoji = (tb.tabulate(emoji_selected, tablefmt="pipe", headers="keys"))
 
 #st.plotly_chart(fig_product_sales)
 
+
+
+#--- Sidebar ------
+htp_2="https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg"
+st.sidebar.image(htp_2, use_column_width=True)
 #--- MAINPAGE -----
 # def set_bg_hack_url():
 #     '''
