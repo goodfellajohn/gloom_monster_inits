@@ -136,7 +136,7 @@ tab_emoji = (tb.tabulate(emoji_selected, tablefmt="pipe", headers="keys"))
 
 #--- MAINPAGE -----
 st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
-st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{":sunny::hocho: Sister Mary Clarence & Vlad II Killéus Conquest :droplet::bear:”"}</h1>', unsafe_allow_html=True)
+#st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{":sunny::hocho: Sister Mary Clarence & Vlad II Killéus Conquest :droplet::bear:”"}</h1>', unsafe_allow_html=True)
 st.markdown("## Important Details")
 #st.dataframe(df_selection_filtered)
 st.dataframe(df_selection_filtered.style.apply(highlight_elite, axis=1))
