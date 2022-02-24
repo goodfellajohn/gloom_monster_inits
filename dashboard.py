@@ -90,14 +90,16 @@ df_selection = df.query(
 )
 
 
-barh_plot = px.bar(b,  orientation='h')
+barh_plot = px.bar(b,  orientation='h',title = "Every Monster Attack Card Initiative", labels = {"value" : "Stacked Monster Decks Total Speed",
+                                                                                                  "Monster" : "Monsters"})
 barh_plot.layout.showlegend = False
 
 b2 = df_selection['Initiatives '].str.split(',', expand=True)
 b2['Monster'] = df_selection['Monster']
 b2 = b2.drop_duplicates()
 b2 = b2.pivot_table(index=['Monster'])
-barh_selected_plot = px.bar(b2,  orientation='h')
+barh_selected_plot = px.bar(b2,  orientation='h',title = "Every Monster Attack Card Initiative", labels = {"value" : "Stacked Monster Decks Total Speed",
+                                                                                                  "Monster" : "Monsters"})
 barh_selected_plot.layout.showlegend = False
 
 
