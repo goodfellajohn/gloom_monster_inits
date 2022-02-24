@@ -173,6 +173,7 @@ hide_dataframe_row_index = """
             </style>
             """
 
+st.sidebar.image: st.sidebar.image("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg", use_column_width=True) [image]
 # def set_bg_hack_url():
 #     '''
 #     A function to unpack an image from url and set as bg.
@@ -192,17 +193,6 @@ hide_dataframe_row_index = """
 #          unsafe_allow_html=True
 #      )
 # set_bg_hack_url()
-st.markdown(
-  f"""
-  <style>
-  .stApp {{
-      .sidebar .sidebar-content {
-      background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
-  }
-  </style>
-  """,
-  unsafe_allow_html=True
-)
-
-#st.markdown(hide_st_style, unsafe_allow_html=True)
+# MAKE SURE TO COMMENT OUT NEXT LINE IF YOU WANT FUNCTION FOR BACKGROUND TO RUN
+st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
