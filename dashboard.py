@@ -197,7 +197,7 @@ st.markdown(
   <style>
   .stApp {{
       .sidebar .sidebar-content {
-      background-image: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
+      background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
   }
   </style>
   """,
