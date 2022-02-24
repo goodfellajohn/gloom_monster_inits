@@ -115,8 +115,7 @@ k = pd.DataFrame(prob_df['Monster_Names'])
 k['% of deck faster than 25'] = round(prob_df['p_25'],2)
 k['% of deck faster than 50'] = round(prob_df['p_50'],2)
 k['% of deck faster than 75'] = round(prob_df['p_75'],2)
-k.style.set_properties(**{'background-color': 'black',
-                           'color': 'green'})
+k.style
 
 #Emoji incorporation
 emoji_selected = df_selection[['Monster','Monster Level','Attributes']].copy()
@@ -169,7 +168,8 @@ st.markdown("### \n\n\n\n\n\n\n\n\n\n\n\n\nPassive Abilities")
 st.markdown("Poison = :skull: || Flying = :airplane: || Curse = :zap: || Advantage = :muscle: || Shield = :beginner: || Range = :signal_strength:     \nDisarm = :cop: || Muddle = :question:  ||  Retaliate = :leftwards_arrow_with_hook: || Immobilize = :traffic_light: || Pierce = :cupid: || Wound = :broken_heart: || Target = :x:     \nAttackers gain Disadvantage = Attackers gain :question:")
 st.markdown(tab_emoji)
 st.markdown("## Complete Table")
-st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
+st.write(df_selection.style.apply(highlight_elite,axis=1))
+#st.dataframe(df_selection.style.apply(highlight_elite, axis=1))
 st.markdown("## Monster Initiatives Stacked Barchart below:")
 st.markdown("#### *Slowest monsters will have the longest bars as initiatives are aggregated by Sum()")
 st.write(barh_selected_plot)
