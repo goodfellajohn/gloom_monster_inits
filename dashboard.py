@@ -64,8 +64,6 @@ def highlight_elite(s):
     return ['background-color: yellow']*len(s) if "Elite" in s['Monster Level'] else ['background-color: ']*len(s)
 
 htp="https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg"
-#st.image(htp, caption= 'logo', width=350)
-#image = Image.open('https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/jeez.jpg')
 
 #--- SIDEBAR ----
 st.sidebar.header("Select Scenario Level & Monsters:")
@@ -115,7 +113,7 @@ k = pd.DataFrame(prob_df['Monster_Names'])
 k['% of deck faster than 25'] = round(prob_df['p_25'],2)
 k['% of deck faster than 50'] = round(prob_df['p_50'],2)
 k['% of deck faster than 75'] = round(prob_df['p_75'],2)
-k.style.hide_index()
+k
 
 #Emoji incorporation
 emoji_selected = df_selection[['Monster','Monster Level','Attributes']].copy()
