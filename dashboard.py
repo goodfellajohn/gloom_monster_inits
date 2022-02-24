@@ -196,13 +196,11 @@ st.markdown(
     """
 <style>
 .sidebar .sidebar-content {
-    background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
-    #background-image: linear-gradient(#2e7bcf,#2e7bcf);
-    #color: white;
+    background-image: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
 }
 </style>
 """,
-    unsafe_allow_html=True,
+unsafe_allow_html=True,
 )
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
