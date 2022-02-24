@@ -184,10 +184,10 @@ st.markdown(
     """
     <style>
     .reportview-container {
-        background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg")
+        background: url("https://github.com/goodfellajohn/gloom_monster_inits/blob/main/gloom.jpeg?raw=true")
     }
    .sidebar .sidebar-content {
-        background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg")
+        background: url("https://github.com/goodfellajohn/gloom_monster_inits/blob/main/gloom.jpeg?raw=true")
     }
     </style>
     """,
