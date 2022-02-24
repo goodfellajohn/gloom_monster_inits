@@ -148,7 +148,7 @@ def set_bg_hack_url():
          .stApp {{
              background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
              background-size: cover;
-             opacity: 0.25;
+             opacity: 0.5;
          }}
          </style>
          """,
