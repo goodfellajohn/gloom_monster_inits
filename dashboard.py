@@ -193,6 +193,6 @@ st.sidebar.image: st.sidebar.image("https://raw.githubusercontent.com/goodfellaj
 #          unsafe_allow_html=True
 #      )
 # set_bg_hack_url()
-# MAKE SURE TO COMMENT OUT NEXT LINE IF YOU WANT FUNCTION FOR BACKGROUND TO RUN
+# MAKE SURE TO COMMENT OUT NEXT LINE IF YOU WANT FUNCTION FOR BACKGROUND TO RUN 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
