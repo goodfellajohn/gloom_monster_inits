@@ -155,6 +155,7 @@ def set_bg_hack_url():
          unsafe_allow_html=True
      )
 set_bg_hack_url()
+
 st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
 #st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{":sunny::hocho: Sister Mary Clarence & Vlad II Killéus Conquest :droplet::bear:”"}</h1>', unsafe_allow_html=True)
 st.markdown("## Important Details")
