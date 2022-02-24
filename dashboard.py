@@ -148,7 +148,7 @@ def set_bg_hack_url():
          .stApp {{
              background: url("https://raw.githubusercontent.com/goodfellajohn/gloom_monster_inits/main/gloom.jpeg");
              background-size: cover;
-             opacity: 0.5;
+             opacity: 0.8;
          }}
          </style>
          """,
@@ -157,6 +157,7 @@ def set_bg_hack_url():
 set_bg_hack_url()
 
 st.title(":sunny::hocho: Sister Mary Clarence & Vlad II Killéu's Conquest :droplet::bear:")
+st.markdown(<span style='background :yellow' > Background color is yellow </span>)
 #st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{":sunny::hocho: Sister Mary Clarence & Vlad II Killéus Conquest :droplet::bear:”"}</h1>', unsafe_allow_html=True)
 st.markdown("## Important Details")
 #st.dataframe(df_selection_filtered)
